@@ -91,23 +91,6 @@ If the frontend package manifest does not define a `start` script, use the scrip
 - A frontend deployed on GitHub Pages cannot host the Node.js API or MongoDB server. Deploy the frontend and backend separately if a live full-stack demo is needed.
 - Keep sample or test data free of private information.
 
-## Testing checklist
-
-Before release, record actual results for:
-- [ ] Backend starts successfully
-- [ ] MongoDB connection succeeds
-- [ ] `GET /plants` returns expected data
-- [ ] Frontend loads without console errors
-- [ ] Search/filter and plant details work
-- [ ] Page navigation reaches all intended pages
-- [ ] Chatbot responses behave as documented
-- [ ] Quiz and guided tours work
-- [ ] Bookmarks/notes persist as expected
-- [ ] Destructive endpoints are protected or disabled
-- [ ] Responsive layout is usable on mobile-sized screens
-
-Do not mark a test as passing until you have run it.
-
 ## Educational disclaimer
 
 This project is intended for learning and educational exploration. Plant and traditional-medicine information may require independent source verification. The application is not a substitute for qualified medical advice and should not be used to diagnose or treat health conditions.
