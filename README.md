@@ -1,13 +1,44 @@
-# AYUSH Herbal Garden — Virtual Herbal Garden
+# AYUSH Virtual Herbal Garden — Virtual Herbal Garden
 
-A full-stack educational project for exploring medicinal plants and traditional herbal knowledge. The repository is organized into a React frontend and a Node.js/Express backend, with MongoDB integration through Mongoose.
+An interactive web-based educational platform designed to help users explore medicinal plants and learn about traditional herbal knowledge associated with AYUSH systems.
 
-> **Academic project portfolio note:** This repository is based on the uploaded project archive. Please verify that the code and feature status match the version approved by your college before publishing. The README deliberately distinguishes configured/planned integrations from functionality that still needs testing.
+## Overview
 
-## Project structure
+AYUSH Virtual Herbal Garden is an academic full-stack web development project that brings medicinal plant information and interactive learning features together in one platform. It aims to make plant-related educational resources easier to explore through a user-friendly interface.
+
+The project uses a React frontend, a Node.js and Express backend, and MongoDB integration to organize the application into separate frontend and backend components.
+
+## Features
+
+- **Interactive Plant Garden** — Browse and explore medicinal plant information.
+- **Plant Details** — View available plant descriptions and related information.
+- **Search and Filtering** — Find plants using the available browsing controls.
+- **Herbal Information Chatbot** — Explore the chatbot interface for herbal information.
+- **Interactive Quiz** — Test knowledge of medicinal plants.
+- **Guided Tours** — Explore themed learning sections.
+- **My Garden** — Access the personal garden and bookmarking interface.
+- **Responsive User Interface** — A plant-inspired visual design for an engaging learning experience.
+
+*Feature availability may depend on the current implementation. Chatbot and symptom-related features should not be considered AI-powered or medically validated unless the corresponding functionality has been implemented and tested.*
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Web page structure |
+| CSS3 | Styling and responsive layouts |
+| JavaScript | Application logic and interactions |
+| React.js | Frontend development |
+| Node.js | Backend runtime |
+| Express.js | Backend API and routing |
+| MongoDB | Database |
+| Mongoose | MongoDB object modelling |
+| npm | Package management |
+
+## Project Structure
 
 ```text
-AYUSH-HERBAL-GARDEN/
+ayush-herbal-garden/
 ├── backend/
 │   ├── models/
 │   │   └── Plant.js
@@ -16,57 +47,52 @@ AYUSH-HERBAL-GARDEN/
 │   ├── db.js
 │   ├── server.js
 │   └── package.json
+│
 ├── frontend/
 │   ├── public/
+│   │   └── index.html
 │   ├── src/
 │   │   ├── components/
 │   │   ├── data/
 │   │   ├── pages/
 │   │   ├── App.js
-│   │   └── ...
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── index.js
 │   └── package.json
+│
 ├── .gitignore
 └── README.md
 ```
 
-## Technology stack
+The structure above is illustrative. Keep the folder and file names aligned with the actual files in the repository.
 
-- **Frontend:** React, JavaScript, CSS
-- **Backend:** Node.js, Express.js
-- **Database integration:** MongoDB with Mongoose
-- **API style:** REST endpoints
-- **Development/testing:** npm; test API routes with a tool such as Postman
+## Getting Started
 
-## Features and scope
+### Prerequisites
 
-The source tree contains UI components and page modules for plant browsing, plant details, chatbot-style interaction, quizzes, guided tours, bookmarks/personal garden, and a disease/symptom demonstration. The backend contains plant model and route files.
+For running the full application, install:
 
-Feature availability may vary by page and route wiring. Verify each feature locally before describing it as complete. In the current source, the chatbot appears to be a demonstration rather than an external AI integration. The symptom/disease area must not be represented as a clinically validated diagnostic system.
+- [Node.js](https://nodejs.org/)
+- npm, included with Node.js
+- MongoDB, if the backend is configured to use a local database
 
-## Prerequisites
+### Option 1: Open an HTML File Directly
 
-- Node.js (LTS recommended)
-- npm
-- MongoDB running locally, or a MongoDB connection string you are authorized to use
+If you only want to inspect a standalone HTML page:
 
-## Setup
+1. Open the repository on your computer.
+2. Navigate to `frontend/src/`.
+3. Locate the `.html` file you want to view.
+4. Double-click the file to open it in your default web browser.
 
-### 1. Backend
+**Important:** React source files such as `App.js`, `index.js`, and component files cannot be run by double-clicking them. If the HTML file loads React modules, fetches separate files, or depends on the backend, opening it directly may not work correctly. In a standard Create React App project, the HTML entry file is normally `frontend/public/index.html`.
 
-Open a terminal at the repository root:
+### Option 2: Run the React Application
 
-```bash
-cd backend
-npm install
-```
-
-Configure the MongoDB connection using the method supported by `backend/db.js`. If you change the application to use environment variables, keep real credentials in a local `.env` file and never commit that file.
-
-Start the API using the script in `backend/package.json`, if provided. Otherwise, inspect `backend/server.js`; the project has been configured around port `3001`.
-
-### 2. Frontend
-
-Open a second terminal at the repository root:
+1. Clone or download the repository.
+2. Open the project folder in a terminal.
+3. Start the frontend:
 
 ```bash
 cd frontend
@@ -74,19 +100,40 @@ npm install
 npm start
 ```
 
-If the frontend package manifest does not define a `start` script, use the scripts listed in `frontend/package.json` and update this section to match the working command.
+4. Open the local URL displayed in the terminal, usually `http://localhost:3000`.
 
-### 3. Verify the connection
+### Option 3: Run the Full-Stack Application
 
-- Confirm the backend starts without errors.
-- Confirm MongoDB connects successfully.
-- Check the plant endpoint in a browser or API client at `http://localhost:3001/plants` if the server route is mounted at `/plants`.
-- Confirm the frontend can retrieve and display plant records.
-- Check the browser console and backend terminal for errors.
+The backend must run separately when the frontend depends on the API or database.
 
-## Security and deployment notes
+Open a second terminal:
 
-- Do not commit `.env` files, database credentials, API keys, or personal tokens.
-- Review destructive endpoints before deploying. In particular, verify the behavior and access control of any route that deletes plant records. Do not expose destructive database operations publicly without appropriate authorization.
-- A frontend deployed on GitHub Pages cannot host the Node.js API or MongoDB server. Deploy the frontend and backend separately if a live full-stack demo is needed.
-- Keep sample or test data free of private information.
+```bash
+cd backend
+npm install
+npm start
+```
+
+Configure MongoDB according to the backend configuration before starting the server. If the API uses port `3001`, verify that the server starts on that port and that the frontend requests the correct API URL.
+
+If the frontend and backend both need to run, keep both terminal sessions open.
+
+## Educational Purpose
+
+This project is intended to support learning and exploration of medicinal plants and traditional herbal knowledge. Information presented in the application should be checked against reliable references.
+
+The application is an educational resource, not a substitute for professional medical advice, diagnosis, or treatment.
+
+## Future Enhancements
+
+Potential improvements include:
+
+- Expanding the medicinal plant information database.
+- Adding verified references to plant entries.
+- Improving search and filtering.
+- Enhancing accessibility and mobile responsiveness.
+- Integrating a genuine AI-based herbal information assistant.
+- Adding secure user accounts and cloud-based bookmarks.
+- Developing and evaluating a plant-identification model, if required.
+
+These are possible future enhancements and should not be interpreted as existing features unless implemented.
