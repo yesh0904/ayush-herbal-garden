@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    background: #1a2e1a;
+    color: #f5f0e8;
+}
+
+/* NAV */
+.navbar {
+    background: rgba(26,46,26,0.95);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(74,124,89,0.3);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #b8d4a8;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.hero span {
+    color: #7ab893;
+}
+
+.hero p {
+    color: #6b7b6b;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #4a7c59;
+    color: white;
+}
+
+/* PLANT GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    background: rgba(45,74,45,0.3);
+    border: 1px solid rgba(74,124,89,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #7ab893;
+}
+
+.card h3 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.card p {
+    color: #6b7b6b;
+}
